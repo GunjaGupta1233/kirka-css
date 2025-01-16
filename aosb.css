@@ -26,6 +26,7 @@
     display: none;
 }
 
+/* Red Team Box - Remove "RED" text and red bar, add left red border */
 .tab-team-info .player-list:nth-child(1)::before {
     content: ""; /* Remove the "RED" text */
     background-color: transparent; /* Remove the red background */
@@ -41,6 +42,7 @@
     padding-left: 0.5rem; /* Add some padding to the left for spacing */
 }
 
+/* Blue Team Box - Keep as is */
 .tab-team-info .player-list:nth-child(2)::before {
     content: "BLUE";
     width: 100%;
