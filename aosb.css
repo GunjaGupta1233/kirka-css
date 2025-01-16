@@ -8,7 +8,7 @@
     right: 0 !important;
     position: fixed;
     margin: 0.5rem !important;
-    padding: 0.15rem !important;
+    padding: 0 !important; /* Removed padding inside the big box */
 }
 
 .tab-team-info .players-cont {
@@ -19,6 +19,7 @@
 .tab-team-info .player-list {
     margin: unset !important;
     gap: 0.25rem;
+    padding: 0 0.5rem !important; /* Keep left and right padding, remove top and bottom padding */
 }
 
 .tab-info > .head,
@@ -26,7 +27,7 @@
     display: none;
 }
 
-/* Red Team Box - Remove "RED" text and red bar, add left red border */
+/* Red Team Box - Remove "RED" text and red bar, add left red border with radius */
 .tab-team-info .player-list:nth-child(1)::before {
     content: ""; /* Remove the "RED" text */
     background-color: transparent; /* Remove the red background */
@@ -35,24 +36,37 @@
 }
 
 .tab-team-info .player-list:nth-child(1) {
-    border-left: 4px solid #ff4d42; /* Add a bold red left border */
+    border-left: 4px solid #ff4d42; /* Adjust thickness here (e.g., 2px, 6px) */
     border-top: none; /* Ensure no top border */
     border-right: none; /* Ensure no right border */
     border-bottom: none; /* Ensure no bottom border */
-    padding-left: 0.5rem; /* Add some padding to the left for spacing */
+    border-top-left-radius: 8px; /* Add radius to top-left corner */
+    border-bottom-left-radius: 8px; /* Add radius to bottom-left corner */
+    padding-left: 0.5rem !important; /* Keep left padding */
+    padding-right: 0.5rem !important; /* Keep right padding */
+    padding-top: 0 !important; /* Remove top padding */
+    padding-bottom: 0 !important; /* Remove bottom padding */
 }
 
-/* Blue Team Box - Keep as is */
+/* Blue Team Box - Remove "BLUE" text and blue bar, add left blue border with radius */
 .tab-team-info .player-list:nth-child(2)::before {
-    content: "BLUE";
-    width: 100%;
-    text-align: left;
-    padding: 0.25rem 0.5rem;
-    font-size: 1.25rem;
-    background-color: #0d6dc6;
-    border-radius: 0.25rem;
-    box-sizing: border-box;
-    margin-top: 0.5rem;
+    content: ""; /* Remove the "BLUE" text */
+    background-color: transparent; /* Remove the blue background */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.tab-team-info .player-list:nth-child(2) {
+    border-left: 4px solid #0d6dc6; /* Adjust thickness here (e.g., 2px, 6px) */
+    border-top: none; /* Ensure no top border */
+    border-right: none; /* Ensure no right border */
+    border-bottom: none; /* Ensure no bottom border */
+    border-top-left-radius: 8px; /* Add radius to top-left corner */
+    border-bottom-left-radius: 8px; /* Add radius to bottom-left corner */
+    padding-left: 0.5rem !important; /* Keep left padding */
+    padding-right: 0.5rem !important; /* Keep right padding */
+    padding-top: 0 !important; /* Remove top padding */
+    padding-bottom: 0 !important; /* Remove bottom padding */
 }
 
 .tab-info .list,
@@ -62,12 +76,15 @@
 
 .tab-info .players-wrap,
 .tab-team-info .players-wrap {
-    padding: 0.25rem;
+    padding: 0 !important; /* Removed padding to decrease height */
 }
 
 .tab-info .player-cont,
 .tab-team-info .player-cont {
     margin: unset;
+    padding: 0 !important; /* Removed padding to decrease height */
+    font-size: 0.8rem; /* Reduced font size to fit smaller height */
+    line-height: 1.2; /* Adjusted line height for better spacing */
 }
 
 .kill-bar-cont {
